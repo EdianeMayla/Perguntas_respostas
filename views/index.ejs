@@ -4,18 +4,18 @@
 
   <div class ="container">
     <hr>
-    <h1> Perguntas </h1>
-    <hr>
     <a href= "/perguntar" class="btn btn-primary">Perguntar</a>
+    <hr>
+    <h1><i class="bi-card-list" style="margin-right: 9px;"></i>Lista de Perguntas </h1>
     <hr>
     <% perguntas.forEach(pergunta => { %>
       <br>
       <div class="card">
         <div class="card-body">
-          <h3><%= pergunta.titulo %></h3>
+          <h3>Assunto: <%= pergunta.titulo %></h3>
         </div>
         <div class="card-footer">
-          <a href="/pergunta/<%= pergunta.id %>"><button class="btn btn-primary">Responder</button></a>
+          <a href="/pergunta/<%= pergunta.id %>"><button class="btn btn-primary"><i class="bi-reply" style="margin-right: 5px;"></i>Responder</button></a>
         </div>
       </div>
    <% }) %>

@@ -46,6 +46,7 @@ app.get("/Perguntar", (req, res) => {
   res.render("perguntar");
 });
 
+
 app.post("/salvarpergunta", (req, res) => {
   var titulo = req.body.titulo;
   var descricao = req.body.descricao;
