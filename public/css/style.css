@@ -25,3 +25,11 @@ a.navbar:hover {
   -ms-transform: scaleX(-1);
   display: inline-flex;
 }
+
+.Delete-Res-button {
+  display: inline-flex;
+}
+
+.delete-button {
+  margin-left: 10px;
+}

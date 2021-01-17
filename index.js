@@ -96,6 +96,36 @@ app.post("/responder", (req, res) => {
 
 });
 
+app.post("/pergunta/delete", (req, res) =>{
+   var id = req.body.id;
+     Pergunta.destroy({
+       where: { 
+         id:id
+       }
+     }).then(() =>{
+      Resposta.destroy({
+          where: {
+          perguntaId:id
+          }
+      })
+        res.redirect("/")
+     });
+
+});
+
+app.post("/resposta/:id/:perguntaId", (req, res) => {
+  var id = req.params.id;
+  var perguntaId = req.params.perguntaId;
+
+      Resposta.destroy({
+        where: {
+          id:id
+        }
+      }).then(() => {
+        res.redirect("/pergunta/" + perguntaId);
+      });
+})
+
 app.listen(4000, () => {
   //Obrigatorio para o servidor rodar
   console.log("O servidor está funcionando!"); //opcional

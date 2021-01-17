@@ -14,8 +14,13 @@
         <div class="card-body">
           <h3>Assunto: <%= pergunta.titulo %></h3>
         </div>
-        <div class="card-footer">
+        <div class="card-footer Delete-Res-button">
           <a href="/pergunta/<%= pergunta.id %>"><button class="btn btn-primary"><i class="bi-reply" style="margin-right: 5px;"></i>Responder</button></a>
+          <form method="POST" action="/pergunta/delete">
+            <input type="hidden" name="id" value="<%= pergunta.id %>">
+            <button class="btn btn-danger delete-button">Deletar</button>
+          </form>
+          
         </div>
       </div>
    <% }) %>
@@ -23,3 +28,4 @@
   </div>
 </body>
 <%- include ('partials/footer.ejs') %>
+
